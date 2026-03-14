@@ -6,6 +6,13 @@ T = int(input())
 for tc in range(T):
     length = int(input())
     numbers = list(map(int, input().split()))
+    maxNumber = numbers[0]
+    miuNumber = numbers[0]
+    for i in numbers:
+        if i > maxNumber:
+            maxNumber = i
+        if i < miuNumber:
+            miuNumber = i
 
 
-    print(f'#{tc+1} {max(numbers)-min(numbers)}')
+    print(f'#{tc+1} {maxNumber-miuNumber}')
