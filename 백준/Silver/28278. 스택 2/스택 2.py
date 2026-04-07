@@ -1,26 +1,20 @@
 import sys
 
-data = sys.stdin.read().split()
+#sys.stdin = open('./input.txt', 'r')  # 제출시 주석
+input = sys.stdin.readline  # 속도위해 필수
 
-n = int(data[0])
+N = int(input())
 stack = []
-out = []
 
-i = 1
-for _ in range(n):
-    c = data[i]
-    i += 1
-    
-    if c == '1':
-        stack.append(int(data[i]))
-        i += 1
-    elif c == '2':
-        out.append(str(stack.pop()) if stack else '-1')
-    elif c == '3':
-        out.append(str(len(stack)))
-    elif c == '4':
-        out.append('0' if stack else '1')
-    else:
-        out.append(str(stack[-1]) if stack else '-1')
-
-sys.stdout.write('\n'.join(out) + '\n')
+for _ in range(N):
+    str = input().split()
+    if str[0]=="1":
+        stack.append(str[1])
+    elif str[0]=="2":
+        print(stack.pop() if stack else -1)
+    elif str[0]=="3":
+        print(len(stack))
+    elif str[0]=="4":
+        print(0 if stack else 1)
+    elif str[0]=="5":
+        print(stack[-1] if stack else -1)
