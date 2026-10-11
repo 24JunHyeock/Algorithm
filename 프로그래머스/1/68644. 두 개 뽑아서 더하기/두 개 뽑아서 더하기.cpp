@@ -6,7 +6,7 @@ using namespace std;
 
 vector<int> solution(vector<int> numbers) {
     vector<int> answer;
-    vector<bool> ch (200,false);
+    vector<bool> ch (201,false);
     for(int i=0; i<numbers.size();i++){
         for(int j=i+1;j<numbers.size();j++){
             int sum = numbers[i]+numbers[j];
